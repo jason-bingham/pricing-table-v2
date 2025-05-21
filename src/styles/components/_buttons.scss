@@ -1,32 +1,24 @@
 @use "../abstracts/" as *;
 
-// button reset
 .button {
-  display: inline-flex;
   cursor: pointer;
-  text-decoration: none;
-  text-transform: uppercase;
-  line-height: 1;
   border: 0;
-  font-weight: $fw-bold;
-  padding: 1.125em 2em;
-  transition: 275ms ease;
+  text-transform: uppercase;
+  font-weight: $fw-700;
+  color: clr(neutral, 100);
+  background-color: clr(primary, 400);
+  padding: 1em 1.5em;
 
-  &[data-type="accent"] {
-    background-color: clr(primary, 400);
-    color: clr(neutral, 900);
+  justify-self: center;
+
+  .inverted & {
+    color: clr(primary, 400);
+    background-color: clr(neutral, 100);
   }
 
-  &[data-type="outline"] {
-    --outline-size: 4px;
-    background-color: transparent;
-    outline: var(--outline-size) solid clr(neutral, 100);
-    outline-offset: calc(var(--outline-size) * -1);
+  &:hover,
+  &:focus {
     color: clr(neutral, 100);
-  }
-
-  &:is(:hover, :focus) {
-    background: clr(neutral, 100);
-    color: clr(neutral, 900);
+    background-color: rgb(clr(neutral, 900), 0.7);
   }
 }

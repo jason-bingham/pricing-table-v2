@@ -1,24 +1,25 @@
 @use "sass:map";
 
-$ff-sans: "Lato", sans-serif;
+// Font Families
+$ff-sans: "Open Sans", sans-serif;
 $ff-serif: "Abril Fatface", serif;
 $ff-base: $ff-sans;
 $ff-accent: $ff-serif;
 
+// Font Sizes
 $font-sizes: (
-  900: clamp(2.5rem, 0.5rem + 7vw, 5rem),
-  800: clamp(1.875rem, 5rem + 10vw, 3.75rem),
-  600: clamp(1.4rem, 0.5rem + 3vw, 1.6875rem),
-  500: 1.3125rem,
+  900: 3.75rem,
+  800: 3rem,
+  600: 1.5rem,
+  500: 1.3125,
   400: 1.125rem,
-  300: 1rem,
 );
 
-$fw-thin: 200;
-$fw-regular: 400;
-$fw-bold: 700;
-$fw-black: 900;
+// Font Weights
+$fw-400: 400;
+$fw-700: 700;
 
+// Functions
 @function fs($font-size) {
   @if map.has-key($font-sizes, $font-size) {
     @return map.get($font-sizes, $font-size);
@@ -27,6 +28,7 @@ $fw-black: 900;
   }
 }
 
+// Utilities
 @each $size-name, $size-value in $font-sizes {
   .fs-#{$size-name} {
     font-size: $size-value;
@@ -38,9 +40,9 @@ $fw-black: 900;
 }
 
 .fw-regular {
-  font-weight: $fw-regular;
+  font-weight: $fw-400;
 }
 
 .fw-bold {
-  font-weight: $fw-bold;
+  font-weight: $fw-700;
 }

@@ -1,0 +1,6 @@
+@use "../abstracts" as *;
+
+.inverted {
+  background: clr(primary, 400);
+  color: clr(neutral, 100);
+}
